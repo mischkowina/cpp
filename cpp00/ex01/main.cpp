@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:40:26 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/07 17:08:28 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:16:03 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 			book.display_phonebook();
 		else if (input == "EXIT")
 		{
-			std::cout << PINK "Good decision. I will loose your contacts anyways." DEFAULT << std::endl;
+			std::cout << PINK "Good decision. I will lose your contacts anyways." DEFAULT << std::endl;
 			return (0);
 		}
 		else

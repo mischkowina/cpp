@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:02:46 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/07 18:34:38 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:21:57 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	PhoneBook::display_phonebook(void)
 		std::cout << BLUE "Index: " DEFAULT;
 		getline(std::cin, input);
 		idx = std::atoi(input.c_str());
-		if (idx > 0 && idx < 9)
+		if (idx > 0 && idx < 9 && idx <= cur_idx)
 		{
 			contacts[idx - 1].display_contact();
 			break ;

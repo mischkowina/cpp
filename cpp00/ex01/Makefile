@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/07 18:58:35 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/07 19:15:09 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
-run: all
-	./$(NAME)
 
 .PHONY: all clean fclean re leaks run
