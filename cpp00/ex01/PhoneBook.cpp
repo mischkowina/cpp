@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:02:46 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/07 18:04:45 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:34:38 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,22 @@ void	PhoneBook::set_idx(int idx)
 
 void	PhoneBook::add_contact(void)
 {
+	Contact	contact;
+	int		idx;
+	
 	std::cout << PINK "Okay, let's get it over with." DEFAULT << std::endl;
-	contacts[cur_idx].set_idx(cur_idx);
-	contacts[cur_idx].set_first();
-	contacts[cur_idx].set_last();
-	contacts[cur_idx].set_nick();
-	contacts[cur_idx].set_phone();
-	contacts[cur_idx].set_secret();
-	if (cur_idx == 7)
-		cur_idx = 0;
+	contact.set_first();
+	contact.set_last();
+	contact.set_nick();
+	contact.set_phone();
+	contact.set_secret();
+	if (cur_idx == 0)
+		idx = 0;
 	else
-		cur_idx++;
+		idx = cur_idx % 8;
+	contact.set_idx(idx);
+	contacts[idx] = contact;
+	cur_idx++;
 }
 
 void	PhoneBook::display_phonebook(void)
@@ -37,6 +42,11 @@ void	PhoneBook::display_phonebook(void)
 	std::string	input;
 	int			idx;
 	
+	if (cur_idx == 0)
+	{
+		std::cout << PINK "The phonebook is empty, you idiot. Add contacts first." DEFAULT << std::endl;
+		return ;
+	}
 	std::cout << PINK "There you go. How hard can it be to remember 8 contacts?" BLUE << std::endl;
 	std::cout << '|';
 	std::cout << std::setw(10) << "INDEX" << '|';
@@ -46,7 +56,7 @@ void	PhoneBook::display_phonebook(void)
 	for (int i = 0; i < 45; i++)
 		std::cout << '-';
 	std::cout << std::endl;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8 && i < cur_idx; i++)
 	{
 		std::cout << '|' << DEFAULT;
 		std::cout << std::setw(10) << (i + 1);
