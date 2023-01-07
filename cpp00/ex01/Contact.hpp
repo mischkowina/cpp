@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:04:13 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/06 18:10:42 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/07 16:20:09 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,13 @@ class Contact {
 		Contact(void);//constructor
 		~Contact(void);//desctructor
 
-		void		set_first(std::string);
-		std::string	get_first();
+		void	display_contact(void);
+		void	set_idx(int idx);
+		void	set_first(void);
+		void	set_last(void);
+		void	set_nick(void);
+		void	set_phone(void);
+		void	set_secret(void);
 };
 
 #endif
