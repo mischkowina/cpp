@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/06 18:32:24 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/07 18:19:28 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
+leaks: all
+	leaks --atExit -- ./$(NAME)
+
 clean:
 	rm -rf $(OBJ)
 
@@ -33,4 +36,4 @@ re: fclean all
 run: all
 	./$(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re leaks

@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:03:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/07 16:20:38 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:17:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ Contact::~Contact(void)
 
 void	Contact::display_contact(void)
 {
-	std::cout << "First name: " << first << std::endl;
-	std::cout << "Last name: " << last << std::endl;
-	std::cout << "Nickname: " << nick << std::endl;
-	std::cout << "Phone number: " << phone << std::endl;
-	std::cout << "Darkest secret: " << secret << std::endl;
+	std::cout << BLUE "First name:\t" DEFAULT << first << std::endl;
+	std::cout << BLUE "Last name:\t" DEFAULT << last << std::endl;
+	std::cout << BLUE "Nickname:\t" DEFAULT << nick << std::endl;
+	std::cout << BLUE "Phone number:\t" DEFAULT << phone << std::endl;
+	std::cout << BLUE "Darkest secret:\t" DEFAULT << secret << std::endl;
 }
 
 void	Contact::set_idx(int idx)
@@ -42,35 +42,94 @@ void	Contact::set_first(void)
 {
 	std::string	input;
 	
-	std::cout << "First name: ";
-	getline(std::cin, input);
+	while (input.length() < 1)
+	{
+		std::cout << BLUE "First name: " DEFAULT;
+		getline(std::cin, input);
+		if (input.length() < 1)
+			std::cout << PINK "Cannot be empty, you fool!" DEFAULT << std::endl;
+	}
 	first = input;
+}
+
+std::string	Contact::get_first(void)
+{
+	std::string	trimmed;
+	
+	trimmed = first;
+	if (trimmed.length() > 10)
+	{
+		trimmed.resize(9);
+		trimmed.append(".");
+	}
+	return (trimmed);
 }
 
 void	Contact::set_last(void)
 {
 	std::string	input;
 	
-	std::cout << "Last name: ";
-	getline(std::cin, input);
+	while (input.length() < 1)
+	{
+		std::cout << BLUE "Last name: " DEFAULT;
+		getline(std::cin, input);
+		if (input.length() < 1)
+			std::cout << PINK "Cannot be empty, you fool!" DEFAULT << std::endl;
+	}
 	last = input;
+}
+
+std::string	Contact::get_last(void)
+{
+	std::string	trimmed;
+	
+	trimmed = last;
+	if (trimmed.length() > 10)
+	{
+		trimmed.resize(9);
+		trimmed.append(".");
+	}
+	return (trimmed);
 }
 
 void	Contact::set_nick(void)
 {
 	std::string	input;
 	
-	std::cout << "Nickname: ";
-	getline(std::cin, input);
+	while (input.length() < 1)
+	{
+		std::cout << BLUE "Nickname: " DEFAULT;
+		getline(std::cin, input);
+		if (input.length() < 1)
+			std::cout << PINK "Cannot be empty, you fool!" DEFAULT << std::endl;
+	}
 	nick = input;
+}
+
+std::string	Contact::get_nick(void)
+{
+	std::string	trimmed;
+	
+	trimmed = nick;
+	if (trimmed.length() > 10)
+	{
+		trimmed.resize(9);
+		trimmed.append(".");
+	}
+	return (trimmed);
 }
 
 void	Contact::set_phone(void)
 {
 	std::string	input;
 	
-	std::cout << "Phone number: ";
-	getline(std::cin, input);
+	while (input.length() < 1)
+	{
+		std::cout << BLUE "Phone number: " DEFAULT;
+		getline(std::cin, input);
+		if (input.length() < 1)
+			std::cout << PINK "Cannot be empty, you fool!" DEFAULT << std::endl;
+	}
 	phone = input;
 }
 
@@ -78,7 +137,12 @@ void	Contact::set_secret(void)
 {
 	std::string	input;
 	
-	std::cout << "Darkest secret: ";
-	getline(std::cin, input);
+	while (input.length() < 1)
+	{
+		std::cout << BLUE "Darkest secret: " DEFAULT;
+		getline(std::cin, input);
+		if (input.length() < 1)
+			std::cout << PINK "Cannot be empty, you fool!" DEFAULT << std::endl;
+	}
 	secret = input;
 }
