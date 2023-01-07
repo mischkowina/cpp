@@ -6,13 +6,13 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/07 18:19:28 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/07 18:58:35 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	phonebook
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	main.cpp Phonebook.cpp Contact.cpp
 OBJ		=	$(SRC:.cpp=.o)
@@ -21,6 +21,9 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+
+run: all
+	./$(NAME)
 
 leaks: all
 	leaks --atExit -- ./$(NAME)
@@ -36,4 +39,4 @@ re: fclean all
 run: all
 	./$(NAME)
 
-.PHONY: all clean fclean re leaks
+.PHONY: all clean fclean re leaks run
