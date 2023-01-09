@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/09 15:38:20 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/09 18:25:06 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ $(NAME): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 run: all
-	./$(NAME)
+	@./$(NAME)
 
 leaks: all
-	leaks --atExit -- ./$(NAME)
+	@leaks --atExit -- ./$(NAME)
 
 clean:
 	rm -rf $(OBJ)
