@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:59:20 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/07 17:05:32 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:34:14 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <cstdlib> //for atoi
 # include "Contact.hpp"
 
 # define DEFAULT "\033[0m"
