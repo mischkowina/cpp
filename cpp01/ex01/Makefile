@@ -6,11 +6,11 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/09 17:29:00 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/09 17:39:40 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	brainz1
+NAME	=	moar_brainz
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
