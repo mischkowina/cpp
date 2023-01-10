@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:52:50 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/10 16:00:36 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:07:48 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 class HumanA {
 	private:
-		std::string	_name;
-		Weapon		&_weapon;
+		std::string	name;
+		Weapon		&weapon;
 
 	public:
 		// HumanA(void);//not allowed, since _weapon needs to be initialized
-		HumanA(std::string name, Weapon &weapon);
+		HumanA(std::string _name, Weapon &_weapon);
 		~HumanA(void);
 		
 		void	attack(void);

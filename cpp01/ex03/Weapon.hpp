@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:52:08 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/10 16:04:28 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:08:11 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 
 	public:
 		Weapon(void);
-		Weapon(std::string type);
+		Weapon(std::string _type);
 		~Weapon(void);
 
 		const std::string	&getType(void);
