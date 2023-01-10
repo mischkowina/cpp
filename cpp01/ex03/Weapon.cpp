@@ -6,13 +6,18 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:52:20 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/10 13:53:34 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:04:48 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
 Weapon::Weapon(void)
+{
+	
+}
+
+Weapon::Weapon(std::string type) : type(type)
 {
 	
 }

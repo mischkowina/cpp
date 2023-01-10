@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:37:24 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/10 14:11:21 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:56:33 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 class HumanB {
 	private:
 		std::string	_name;
-		Weapon		_weapon;
+		Weapon		*_weapon;
 
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
 
 		void	attack(void);
+		void	setWeapon(Weapon &weapon);
 };
 
 #endif
