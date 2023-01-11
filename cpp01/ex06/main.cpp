@@ -6,29 +6,17 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:49:09 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/11 14:38:56 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:39:23 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	Harl	karen;
 
-	std::cout << std::endl << "Experience the four stages of Harl's rage:" << std::endl;
 	
-	std::cout << std::endl << "****** DEBUG ******" << std::endl;
-	karen.complain("debug");
-
-	std::cout << std::endl << "****** INFO ******" << std::endl;
-	karen.complain("info");
-
-	std::cout << std::endl << "****** WARNING ******" << std::endl;
-	karen.complain("warning");
-
-	std::cout << std::endl << "****** ERROR ******" << std::endl;
-	karen.complain("error");
-	std::cout << std::endl;
+	
 	return (0);
 }
