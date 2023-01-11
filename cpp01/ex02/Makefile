@@ -6,13 +6,13 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/09 18:24:05 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/11 18:17:52 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	hi_brain
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
 SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)

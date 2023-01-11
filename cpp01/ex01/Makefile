@@ -6,13 +6,13 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/09 18:22:14 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/11 18:18:29 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	moar_brainz
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
 SRC		=	main.cpp Zombie.cpp zombieHorde.cpp
 OBJ		=	$(SRC:.cpp=.o)

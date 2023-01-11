@@ -6,13 +6,13 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/10 15:24:51 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/11 18:17:27 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	violence
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
 SRC		=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ		=	$(SRC:.cpp=.o)
