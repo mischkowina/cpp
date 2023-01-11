@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:12:38 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/11 13:23:46 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:24:54 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(int argc, char **argv)
 	std::string		s2(argv[3]);
 	std::ifstream	ifs;
 	std::ofstream	ofs;
-	std::string	line;
-	size_t		pos;
+	std::string		line;
+	size_t			pos;
 	
 	ifs.open(filename, std::ifstream::in);
 	ofs.open(filename + ".replace", std::ofstream::out | std::ofstream::trunc);
