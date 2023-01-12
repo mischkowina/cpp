@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:46:22 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/12 13:11:48 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:05:44 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ class Fixed {
 
 	public:
 		Fixed(void);
+		Fixed(Fixed const &src);
 		~Fixed(void);
-		
-		Fixed(Fixed f);
-		Fixed	&operator=(Fixed rhs);
+		Fixed	&operator=(Fixed const &rhs);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);

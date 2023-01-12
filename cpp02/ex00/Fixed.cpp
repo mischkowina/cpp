@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/12 13:13:34 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:14:33 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 Fixed::Fixed(void)
 {
 	std::cout << PINK "Default constructor called." DEFAULT << std::endl;
+	this->value = 0;
 }
 
-Fixed::Fixed(Fixed f)
+Fixed::Fixed(Fixed const &src)
 {
 	std::cout << PINK "Copy constructor called." DEFAULT << std::endl;
+	*this = src;
 }
 
-Fixed	&Fixed::operator=(Fixed rhs)
+Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << BLUE "Copy assignment operator called." DEFAULT << std::endl;
-	this->value = rhs.getRawBits();
+	if (this != &rhs)
+		this->value = rhs.getRawBits();
 	return (*this);
 }
 
