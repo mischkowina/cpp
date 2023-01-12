@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/12 14:59:12 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:23:29 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ Fixed::Fixed(Fixed const &src)
 {
 	std::cout << PINK "Copy constructor called." DEFAULT << std::endl;
 	*this = src;
+}
+
+Fixed::Fixed(int const i)
+{
+	std::cout << PINK "INT constructor called." DEFAULT << std::endl;
+	this->value = i << this->fract_bits;
+}
+
+Fixed::Fixed(float const f)
+{
+	std::cout << PINK "FLOAT constructor called." DEFAULT << std::endl;
+	this->value = (int)f;//placeholder
 }
 
 Fixed::~Fixed(void)
@@ -47,4 +59,14 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << YELLOW "setRawBits member function called." DEFAULT << std::endl;
 	this->value = raw;
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->value >> fract_bits);
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->value);//placeholder
 }
