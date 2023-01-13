@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 15:52:39 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:55:58 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(int const i)
 Fixed::Fixed(float const f)
 {
 	std::cout << PINK "FLOAT constructor called." DEFAULT << std::endl;
-	this->value = round(f * (1 << this->fract_bits));
+	this->value = roundf(f * (1 << this->fract_bits));
 }
 
 Fixed::~Fixed(void)

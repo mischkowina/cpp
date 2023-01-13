@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:46:22 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 14:41:23 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:56:05 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 
 # define DEFAULT "\033[0m"
 # define PINK "\033[35m"
