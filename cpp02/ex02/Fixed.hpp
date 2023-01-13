@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:46:22 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 17:26:18 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:40:38 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ class Fixed {
 		void	setRawBits(int const raw);
 		int		toInt(void) const;
 		float	toFloat(void) const;
+		
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static Fixed const	&min(Fixed const &a, Fixed const &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static Fixed const	&max(Fixed const &a, Fixed const &b);
 };
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs);

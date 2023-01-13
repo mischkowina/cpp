@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 17:28:01 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:44:13 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main(void)
 		std::cout << a << std::endl;
 		std::cout << a++ << std::endl;
 		std::cout << a << std::endl;
-		// std::cout << b << std::endl;
-		// std::cout << Fixed::max( a, b ) << std::endl << std::endl;
+		std::cout << b << std::endl;
+		std::cout << Fixed::max( a, b ) << std::endl;
 	}
 	{
 		std::cout << std::endl << PINK "**** OWN TESTS ****" DEFAULT << std::endl << std::endl;
@@ -61,7 +61,10 @@ int main(void)
 		std::cout << "c: " << c << std::endl;
 
 		std::cout << std::endl << "min() & max() member functions:" << std::endl;
-		
+		std::cout << "Min(a, b) = " << Fixed::min(a, b) << std::endl;
+		std::cout << "Max(a, b) = " << Fixed::max(a, b) << std::endl;
+		std::cout << "const Min(a, b) = " << Fixed::min((Fixed const)a, (Fixed const)b) << std::endl;
+		std::cout << "const Max(a, b) = " << Fixed::max((Fixed const)a, (Fixed const)b) << std::endl << std::endl;
 	}
 	return (0);
 }

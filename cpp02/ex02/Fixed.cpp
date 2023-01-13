@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 17:27:04 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:41:11 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,26 @@ int	Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return ((float)this->value / (float)(1 << fract_bits));
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a <= b ? a : b);
+}
+
+Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
+{
+	return (a <= b ? a : b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a >= b ? a : b);
+}
+
+Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return (a >= b ? a : b);
 }
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
