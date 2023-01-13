@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/12 15:23:29 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:52:39 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(int const i)
 Fixed::Fixed(float const f)
 {
 	std::cout << PINK "FLOAT constructor called." DEFAULT << std::endl;
-	this->value = (int)f;//placeholder
+	this->value = round(f * (1 << this->fract_bits));
 }
 
 Fixed::~Fixed(void)
@@ -51,13 +51,13 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << YELLOW "getRawBits member function called." DEFAULT << std::endl;
+	// std::cout << YELLOW "getRawBits member function called." DEFAULT << std::endl;
 	return (this->value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << YELLOW "setRawBits member function called." DEFAULT << std::endl;
+	// std::cout << YELLOW "setRawBits member function called." DEFAULT << std::endl;
 	this->value = raw;
 }
 
@@ -68,5 +68,11 @@ int	Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->value);//placeholder
+	return ((float)this->value / (float)(1 << fract_bits));
+}
+
+std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
+{
+	o << rhs.toFloat();
+	return (o);
 }

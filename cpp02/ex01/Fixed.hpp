@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:46:22 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/12 15:18:53 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:41:23 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ class Fixed {
 		int		toInt(void) const;
 		float	toFloat(void) const;
 };
+
+std::ostream	&operator<<(std::ostream &o, Fixed const &rhs);
 
 #endif
