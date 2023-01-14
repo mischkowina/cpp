@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/11 18:12:49 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/14 16:33:48 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf *.replace
 
 re: fclean all
 
