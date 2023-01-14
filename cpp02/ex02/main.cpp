@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 17:44:13 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/14 16:29:00 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(void)
 		std::cout << a << std::endl;
 		std::cout << a++ << std::endl;
 		std::cout << a << std::endl;
+		
 		std::cout << b << std::endl;
 		std::cout << Fixed::max( a, b ) << std::endl;
 	}
