@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:38:49 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/13 15:52:45 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/14 16:22:48 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,15 @@ int main( void )
 		std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 		std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	}
-	{
-		// OWN TESTS
-		// Fixed	d(1);
-		// std::cout << d.getRawBits() << std::endl;
-		// std::cout << d.toInt() << std::endl;
+	// {
+	// 	// OWN TESTS
+	// 	Fixed	d(1);
+	// 	std::cout << d.getRawBits() << std::endl;
+	// 	std::cout << d.toInt() << std::endl;
 
-		// Fixed	e(2.55f);
-		// std::cout << e.getRawBits() << std::endl;
-		// std::cout.precision(3);//to cover inprecisions
-		// std::cout << e.toFloat() << std::endl;
-	}
+	// 	Fixed	e(2.55f);
+	// 	std::cout << e.getRawBits() << std::endl;
+	// 	std::cout << e.toFloat() << std::endl;
+	// }
 	return (0);
 }
