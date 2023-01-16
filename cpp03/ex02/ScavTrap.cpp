@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 18:55:10 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/15 19:32:05 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:47:46 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ ScavTrap::ScavTrap(void)
 	this->setDamage(20);
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << PINK "ScavTrap Name Constructor called." DEFAULT << std::endl;
-	this->setName(name);
+	// this->setName(name);
 	this->setHP(100);
 	this->setEP(50);
 	this->setDamage(20);

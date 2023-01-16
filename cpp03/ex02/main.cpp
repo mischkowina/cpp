@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:07:23 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/16 13:32:42 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:56:12 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ int	main(void)
 		fred.beRepaired(7);
 		fred.highFiveGuys();
 	}
-	{
-		std::cout << std::endl << GREEN "*** Test of ScavTrap ****" DEFAULT << std::endl << std::endl;
+	// {
+	// 	std::cout << std::endl << GREEN "*** Test of ScavTrap ****" DEFAULT << std::endl << std::endl;
 		
-		ScavTrap	josh("Josh");
+	// 	ScavTrap	josh("Josh");
 
-		josh.attack("Joe");
-		josh.takeDamage(12);
-		josh.beRepaired(5);
-		josh.guardGate();
-	}
-	{
-		std::cout << std::endl << GREEN "*** Test of ClapTrap ***" DEFAULT << std::endl;
+	// 	josh.attack("Joe");
+	// 	josh.takeDamage(12);
+	// 	josh.beRepaired(5);
+	// 	josh.guardGate();
+	// }
+	// {
+	// 	std::cout << std::endl << GREEN "*** Test of ClapTrap ***" DEFAULT << std::endl;
 		
-		ClapTrap	greg("Greg");
+	// 	ClapTrap	greg("Greg");
 
-		greg.attack("Chandler");
-		greg.takeDamage(4);
-		greg.beRepaired(2);
-	}
+	// 	greg.attack("Chandler");
+	// 	greg.takeDamage(4);
+	// 	greg.beRepaired(2);
+	// }
 	{
 		std::cout << std::endl << GREEN "*** Test of FragTrap assignment to ClapTrap ***" DEFAULT << std::endl;
 

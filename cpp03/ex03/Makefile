@@ -6,15 +6,15 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/16 18:46:37 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/16 18:46:32 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	FragTrap
+NAME	=	DiamondTrap
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
-SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)

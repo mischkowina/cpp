@@ -6,24 +6,46 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:07:23 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/16 18:56:57 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:17:11 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
 	{
-		std::cout << std::endl << GREEN "*** Test of ScavTrap ****" DEFAULT << std::endl << std::endl;
+		std::cout << std::endl << GREEN "*** Test of DiamondTrap ****" DEFAULT << std::endl << std::endl;
 		
-		ScavTrap	josh("Josh");
+		DiamondTrap	desmond("Desmond");
 
-		josh.attack("Joe");
-		josh.takeDamage(12);
-		josh.beRepaired(5);
-		josh.guardGate();
+		desmond.attack("Ross");
+		desmond.takeDamage(19);
+		desmond.beRepaired(10);
+		desmond.guardGate();
+		desmond.highFiveGuys();
+		desmond.whoAmI();
 	}
+	// {
+	// 	std::cout << std::endl << GREEN "*** Test of FragTrap ****" DEFAULT << std::endl << std::endl;
+		
+	// 	FragTrap	fred("Fred");
+
+	// 	fred.attack("Joe");
+	// 	fred.takeDamage(21);
+	// 	fred.beRepaired(7);
+	// 	fred.highFiveGuys();
+	// }
+	// {
+	// 	std::cout << std::endl << GREEN "*** Test of ScavTrap ****" DEFAULT << std::endl << std::endl;
+		
+	// 	ScavTrap	josh("Josh");
+
+	// 	josh.attack("Joe");
+	// 	josh.takeDamage(12);
+	// 	josh.beRepaired(5);
+	// 	josh.guardGate();
+	// }
 	// {
 	// 	std::cout << std::endl << GREEN "*** Test of ClapTrap ***" DEFAULT << std::endl;
 		
@@ -34,10 +56,10 @@ int	main(void)
 	// 	greg.beRepaired(2);
 	// }
 	{
-		std::cout << std::endl << GREEN "*** Test of ScavTrap assignment to ClapTrap ***" DEFAULT << std::endl;
+		std::cout << std::endl << GREEN "*** Test of DiamondTrap assignment to ClapTrap ***" DEFAULT << std::endl;
 
+		DiamondTrap	harl("Harl");
 		ClapTrap	dude;
-		ScavTrap	harl("Harl");
 
 		dude = harl;
 
