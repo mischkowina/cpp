@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:06:38 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/15 16:30:52 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:46:35 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->hp += amount;
 		this->ep--;
-		std::cout << "Clap Trap " << this->name << " repaired itself by " << amount << " hit points." << std::endl;
+		std::cout << "ClapTrap " << this->name << " repaired itself by " << amount << " hit points." << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << this->name << " cannot repair itself since it has 0 energy points." << std::endl;
