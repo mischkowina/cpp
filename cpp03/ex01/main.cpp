@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:07:23 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/15 19:33:34 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:06:10 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,36 @@
 
 int	main(void)
 {
-	// std::cout << GREEN "**** Test of Constructors ****" DEFAULT << std::endl;
-	// ClapTrap	greg("Greg");
-	// ClapTrap	dude;
-	// ClapTrap	jason(greg);
+	{
+		std::cout << std::endl << GREEN "*** Test of ScavTrap ****" DEFAULT << std::endl << std::endl;
+		
+		ScavTrap	josh("Josh");
 
-	// dude.attack("Ross");
-	// jason.attack("Joe");
-	// dude = jason;
-	// dude.attack("Chandler");
-	
-	// std::cout << std::endl << GREEN "**** Test of Member functions ****" DEFAULT << std::endl;
-	// greg.attack("Joe");
-	// greg.attack("Ross");
-	// greg.attack("Chandler");
-	// greg.attack("Ross");
-	// while(greg.getHP() > 0)
-	// 	greg.takeDamage(6);
-	// for (int i = 0; i < 7; i++)
-	// 	greg.beRepaired(1);
-	// greg.attack("Ross");
+		josh.attack("Joe");
+		josh.takeDamage(12);
+		josh.beRepaired(5);
+		josh.guardGate();
+	}
+	{
+		std::cout << std::endl << GREEN "*** Test of ClapTrap ***" DEFAULT << std::endl;
+		
+		ClapTrap	greg("Greg");
+
+		greg.attack("Chandler");
+		greg.takeDamage(4);
+		greg.beRepaired(2);
+	}
+	{
+		std::cout << std::endl << GREEN "*** Test of ScavTrap assignment to ClapTrap ***" DEFAULT << std::endl;
+
+		ClapTrap	dude;
+		ScavTrap	harl("Harl");
+
+		dude = harl;
+
+		dude.attack("Ross");
+		dude.takeDamage(7);
+		dude.beRepaired(3);
+	}
 	return (0);
 }

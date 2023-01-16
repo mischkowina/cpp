@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:47:57 by smischni          #+#    #+#              #
-#    Updated: 2023/01/14 17:07:07 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/16 12:53:03 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	ClapTrap
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
-SRC		=	main.cpp ClapTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)
