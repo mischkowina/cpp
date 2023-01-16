@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:49:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/16 19:25:29 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:28:23 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 DiamondTrap::DiamondTrap(void)
 {
 	std::cout << PINK "DiamondTrap Default Constructor called." DEFAULT << std::endl;
+	//HP, EP and Damage values have to be input manually, since overwritten twice in ClapTrap by ScavTrap and FragTrap
 	this->setHP(100);
 	this->setEP(50);
 	this->setDamage(30);
