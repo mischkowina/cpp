@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:32:57 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:36:15 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:37:03 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-WrongAnimal::WrongAnimal(void)
+WrongCat::WrongCat(void)
 {
-	std::cout << PINK "WrongAnimal Default Constructor called." DEFAULT << std::endl;
-	this->type = "WrongAnimal";
+	std::cout << PINK "WrongCat Default Constructor called." DEFAULT << std::endl;
+	this->type = "WrongCat";
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &src)
+WrongCat::WrongCat(WrongCat const &src)
 {
-	std::cout << PINK "WrongAnimal Copy Constructor called." DEFAULT << std::endl;
+	std::cout << PINK "WrongCat Copy Constructor called." DEFAULT << std::endl;
 	*this = src;
 }
 
-WrongAnimal::~WrongAnimal(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << BLUE "WrongAnimal Destructor called." DEFAULT << std::endl;
+	std::cout << BLUE "WrongCat Destructor called." DEFAULT << std::endl;
 }
 
-WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs)
+WrongCat	&WrongCat::operator=(WrongCat const &rhs)
 {
 	if (this != &rhs)
 		this->type = rhs.getType();
 	return (*this);
 }
 
-void	WrongAnimal::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
-	std::cout << "*WEIRD AND WRONG ANIMALIC NOISE*" << std::endl;
-}
-
-std::string	WrongAnimal::getType(void) const
-{
-	return (this->type);
+	std::cout << "WRONG MEEEEOW" << std::endl;
 }

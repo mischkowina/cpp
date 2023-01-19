@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/01/19 14:59:07 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/19 15:39:12 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	polymorphism
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
-SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)

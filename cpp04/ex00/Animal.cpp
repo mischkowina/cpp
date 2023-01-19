@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:04:59 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:02:51 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:36:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Animal::Animal(void)
 {
 	std::cout << PINK "Animal Default Constructor called." DEFAULT << std::endl;
-	this->type = "Unknown";
+	this->type = "Animal";
 }
 
 Animal::Animal(Animal const &src)
