@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:05:08 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 14:45:10 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:02:33 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ class Animal {
 	public:
 		Animal(void);
 		Animal(Animal const &src);
-		~Animal(void);
+		virtual	~Animal(void);
 
 		Animal	&operator=(Animal const &rhs);
 
-		virtual void	makeSound(void);
+		virtual void	makeSound(void) const;
 		std::string		getType(void) const;
 };
 
