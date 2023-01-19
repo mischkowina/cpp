@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:13:14 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 16:35:31 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:55:48 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ Brain	&Brain::operator=(Brain const &src)
 {
 	for (int i = 0; i < 100; i++)
 		this->ideas[i] = src.getIdea(i);
+	return (*this);
 }
 
 void	Brain::setIdea(std::string newIdea, int index)

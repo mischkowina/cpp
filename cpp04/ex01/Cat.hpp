@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:51:09 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:00:23 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:50:07 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal {
+	private:
+		Brain	*brain;
+	
 	public:
 		Cat(void);
 		Cat(Cat const &src);
