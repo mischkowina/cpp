@@ -6,12 +6,11 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:05:08 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:02:33 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:06:50 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
-
 # define ANIMAL_HPP
 
 # include <iostream>

@@ -6,12 +6,11 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:31:43 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:54:27 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:07:30 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
-
 # define WRONGANIMAL_HPP
 
 # include <iostream>
