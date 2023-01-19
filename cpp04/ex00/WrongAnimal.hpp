@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:31:43 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:33:46 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:54:27 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class WrongAnimal {
 	public:
 		WrongAnimal(void);
 		WrongAnimal(WrongAnimal const &src);
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
 
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 
