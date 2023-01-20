@@ -6,13 +6,12 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:04:48 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/20 17:31:38 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:53:59 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 int	main(void)
 {

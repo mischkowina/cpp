@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/01/19 16:58:52 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/20 17:53:38 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	no_fire
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
-SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)
