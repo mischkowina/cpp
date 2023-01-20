@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:13:14 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 16:55:48 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:05:14 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,21 @@ Brain	&Brain::operator=(Brain const &src)
 	return (*this);
 }
 
-void	Brain::setIdea(std::string newIdea, int index)
+void	Brain::setIdea(std::string newIdea, unsigned int index)
 {
-	this->ideas[index] = newIdea;
+	if (index < 100)
+		this->ideas[index] = newIdea;
+	else
+		std::cout << "Error: Idea index out of bounds." << std::endl;
 }
 
-std::string	Brain::getIdea(int index) const
+std::string	Brain::getIdea(unsigned int index) const
 {
-	return (this->ideas[index]);
+	if (index < 100)
+		return (this->ideas[index]);
+	else
+	{
+		std::cout << "Error: Idea index out of bounds." << std::endl;
+		return ("");
+	}
 }

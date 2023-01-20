@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:51:04 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 17:26:09 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:28:48 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ Dog::Dog(void)
 Dog::Dog(Dog const &src)
 {
 	std::cout << PINK "Dog Copy Constructor called." DEFAULT << std::endl;
-	*this = src;
+	this->brain = new Brain;
+	*(this->brain) = *(src.brain);
+	this->type = src.type;
 }
 
 Dog::~Dog(void)
@@ -35,11 +37,26 @@ Dog	&Dog::operator=(Dog const &rhs)
 {
 	if (this != &rhs)
 		this->type = rhs.type;
-		this->brain = rhs.brain;
+		*(this->brain) = *(rhs.brain);
 	return (*this);
 }
 
 void	Dog::makeSound(void) const
 {
 	std::cout << "WOOOFF!" << std::endl;
+}
+
+void	Dog::setIdea(std::string newIdea, unsigned int index)
+{
+	this->brain->setIdea(newIdea, index);
+}
+
+std::string	Dog::getIdea(unsigned int index) const
+{
+	return (this->brain->getIdea(index));
+}
+
+Brain	&Dog::getBrain(void) const
+{
+	return (*this->brain);
 }

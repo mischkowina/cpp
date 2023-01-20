@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:56:13 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 16:49:51 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:27:44 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ class Dog : public Animal {
 
 		Dog	&operator=(Dog const &rhs);
 
-		void	makeSound(void) const;
+		void		makeSound(void) const;
+		void		setIdea(std::string newIdea, unsigned int index);
+		std::string	getIdea(unsigned int index) const;
+		Brain		&getBrain(void) const;
 };
 
 #endif

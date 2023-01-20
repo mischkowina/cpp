@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:00:34 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 16:30:27 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:55:16 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Brain {
 
 		Brain	&operator=(Brain const &rhs);
 
-		void		setIdea(std::string newIdea, int index);
-		std::string	getIdea(int index) const;
+		void		setIdea(std::string newIdea, unsigned int index);
+		std::string	getIdea(unsigned int index) const;
 };
 
 #endif
