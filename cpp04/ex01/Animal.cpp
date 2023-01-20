@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:04:59 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/19 15:36:24 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:47:01 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Animal	&Animal::operator=(Animal const &rhs)
 
 void	Animal::makeSound(void) const
 {
-	std::cout << "*WEIRD ANIMALIC NOISE*" << std::endl;
+	std::cout << "*WEIRD ANIMAL NOISE*" << std::endl;
 }
 
 std::string	Animal::getType(void) const
