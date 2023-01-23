@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:16:38 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/23 13:21:52 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:55:23 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Character::Character(Character const &rhs)
 
 Character::~Character(void)
 {
-	std::cout << PINK "Character Destructor called." DEFAULT << std::endl;
+	std::cout << BLUE "Character Destructor called." DEFAULT << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (inventory[i])
@@ -81,8 +81,12 @@ void	Character::equip(AMateria *m)
 	for (int i = 0; i < 4; i++)
 	{
 		if (!inventory[i])
+		{
 			inventory[i] = m;
+			return ;
+		}
 	}
+	std::cout << "Full inventory: Materia cannot be equipped." << std::endl;
 }
 
 void	Character::unequip(int idx)

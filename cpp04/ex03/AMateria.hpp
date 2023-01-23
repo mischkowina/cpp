@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:41:37 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/22 16:32:18 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:30:31 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define BLUE "\033[36m"
+
+class ICharacter;
 
 class AMateria {
 	protected:
