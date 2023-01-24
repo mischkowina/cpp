@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:45:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 12:48:24 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:22:51 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Cure::~Cure(void)
 Cure	&Cure::operator=(Cure const &rhs)
 {
 	std::cout << PINK "Cure Copy Assigment Operator called." DEFAULT << std::endl;
-	if (this != &rhs)
-		this->type = rhs.type;
+	if (this != &rhs && this->type.compare(rhs.type))
+		std::cout << "Assignment failed: different Materia types." << std::endl;
 	return (*this);
 }
 

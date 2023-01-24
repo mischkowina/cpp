@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:41:19 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/22 16:44:46 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:21:34 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ AMateria::~AMateria(void)
 AMateria	&AMateria::operator=(AMateria const &rhs)
 {
 	std::cout << PINK "AMateria Copy Assigment Operator called." DEFAULT << std::endl;
-	if (this->type.compare(rhs.type))
+	if (this != &rhs && this->type.compare(rhs.type))
 		std::cout << "Assignment failed: different Materia types." << std::endl;
 	return (*this);
 }

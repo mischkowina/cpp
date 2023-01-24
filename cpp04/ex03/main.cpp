@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:41:04 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 14:00:10 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:25:32 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int main()
 		// AMateria	*m0 = new AMateria();//doesn't work since abstract
 		AMateria	*m1 = new Ice();
 		AMateria	*m2 = new Cure();
+
+		std::cout << YELLOW "Assign Materias of one type to another one:" DEFAULT << std::endl;
+		*m1 = *m2;//not allowed, since they are different Materia types - no copying of type
 		
 		std::cout << YELLOW "Create 2 Characters: target and attacker:" DEFAULT << std::endl;
 		// ICharacter	*c0 = new ICharacter();//doesn't work since abstract/interface
