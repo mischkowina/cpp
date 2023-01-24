@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:45:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/22 16:56:21 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:48:18 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ AMateria	*Ice::clone(void) const
 {
 	AMateria	*clone = new Ice();
 	return (clone);
+}
+
+void	Ice::use(ICharacter &target)
+{
+	if (this->type == "ice")
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:45:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/23 11:12:51 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:48:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ AMateria	*Cure::clone(void) const
 {
 	AMateria	*clone = new Cure();
 	return (clone);
+}
+
+void	Cure::use(ICharacter &target)
+{
+	if (this->type == "cure")
+		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

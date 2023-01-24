@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:12:57 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/23 11:13:24 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:47:15 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Cure : public AMateria {
 		Cure	&operator=(Cure const &rhs);
 
 		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 };
 
 #endif

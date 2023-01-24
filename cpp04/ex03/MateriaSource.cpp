@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:54:24 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/23 15:17:51 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 13:50:09 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 		if (!materias[i]->getType().compare(type))
 			return (materias[i]->clone());
 	}
+	std::cout << "No such Materia known by MateriaSource." << std::endl;
 	return (0);
 }
