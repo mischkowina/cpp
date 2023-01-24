@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:54:24 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 13:50:09 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:54:58 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ MateriaSource::MateriaSource(MateriaSource const &rhs)
 
 MateriaSource::~MateriaSource(void)
 {
-	std::cout << BLUE "MateriaSource Destructor called." DEFAULT << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (materias[i])
 			delete materias[i];
 	}
+	std::cout << BLUE "MateriaSource Destructor called." DEFAULT << std::endl;
 }
 
 MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
@@ -63,7 +63,7 @@ void	MateriaSource::learnMateria(AMateria *m)
 			return ;
 		}
 	}
-	std::cout << "Full capacity: not possible to learn another Marteria" << std::endl;
+	std::cout << "Full capacity: not possible to learn another Materia" << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)

@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:41:04 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 14:25:32 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:32:11 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ int main()
 		AMateria	*m1 = new Ice();
 		AMateria	*m2 = new Cure();
 
+		std::cout << YELLOW "Use Copy Constructor of Ice:" DEFAULT << std::endl;
+		AMateria	*m3 = new Ice(*(Ice*)m1);
+		delete m3;
+		m3 = new Ice(*(Ice*)m2);//should fail since m2 is Cure
+		delete m3;
+
 		std::cout << YELLOW "Assign Materias of one type to another one:" DEFAULT << std::endl;
 		*m1 = *m2;//not allowed, since they are different Materia types - no copying of type
 		
@@ -56,9 +62,9 @@ int main()
 		attacker->equip(m2);
 		attacker->equip(m1->clone());
 		attacker->equip(m2->clone());
-		AMateria	*m3 = new Ice();//make new Materia for the slot since we need to be able to delete it after equipping fails
-		attacker->equip(m3);//shouldn't work since all slots are full
-		delete m3;
+		AMateria	*m4 = new Ice();//make new Materia for the slot since we need to be able to delete it after equipping fails
+		attacker->equip(m4);//shouldn't work since all slots are full
+		delete m4;
 
 		std::cout << YELLOW "Use the 4 equipped Materias:" DEFAULT << std::endl;
 		attacker->use(0, *target);

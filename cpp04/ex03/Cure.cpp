@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:45:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 14:22:51 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:33:30 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Cure::Cure(void)
 Cure::Cure(Cure const &rhs)
 {
 	std::cout << PINK "Cure Copy Constructor called." DEFAULT << std::endl;
+	this->type = "cure";
 	*this = rhs;
 }
 

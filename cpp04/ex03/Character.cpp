@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:16:38 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/23 17:55:23 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:55:27 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Character::Character(Character const &rhs)
 
 Character::~Character(void)
 {
-	std::cout << BLUE "Character Destructor called." DEFAULT << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (inventory[i])
@@ -50,6 +49,7 @@ Character::~Character(void)
 			delete unequipped[i];
 	}
 	delete [] unequipped;
+	std::cout << BLUE "Character Destructor called." DEFAULT << std::endl;
 }
 
 Character	&Character::operator=(Character const &rhs)
@@ -93,7 +93,7 @@ void	Character::unequip(int idx)
 {
 	if (idx > 3 || idx < 0)
 	{
-		std::cout << "Invalid index, inventory can only hold 4 Marterias." << std::endl;
+		std::cout << "Invalid index, inventory can only hold 4 Materias." << std::endl;
 		return ;
 	}
 	else if (!inventory[idx])

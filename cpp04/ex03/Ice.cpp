@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:45:45 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 14:22:33 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:30:58 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Ice::Ice(void)
 Ice::Ice(Ice const &rhs)
 {
 	std::cout << PINK "Ice Copy Constructor called." DEFAULT << std::endl;
+	this->type = "ice";
 	*this = rhs;
 }
 
