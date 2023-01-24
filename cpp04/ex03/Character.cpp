@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:16:38 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/24 14:55:27 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:56:36 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3)
 	{
-		std::cout << "Invalid index, inventory can only hold 4 Marterias." << std::endl;
+		std::cout << "Invalid index, inventory can only hold 4 Materias." << std::endl;
 		return ;
 	}
 	else if (!inventory[idx])
