@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:51:04 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/20 17:28:42 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:57:07 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Cat	&Cat::operator=(Cat const &rhs)
 {
 	if (this != &rhs)
 		this->type = rhs.type;
-		*(this->brain) = *(rhs.brain);
+	*(this->brain) = *(rhs.brain);
 	return (*this);
 }
 
