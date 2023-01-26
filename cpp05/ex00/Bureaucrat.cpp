@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:21 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 15:52:04 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:12:40 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 	return (*this);
 }
 
-std::string	Bureaucrat::getName() const
+std::string const	Bureaucrat::getName() const
 {
 	return (this->name);
 }

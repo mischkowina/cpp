@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:18 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 13:01:00 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:12:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ class Bureaucrat {
 
 		Bureaucrat	&operator=(Bureaucrat const &rhs);
 
-		std::string	getName() const;
-		int			getGrade() const;
-		void		incrementGrade();
-		void		decrementGrade();
+		std::string const	getName() const;
+		int					getGrade() const;
+		void				incrementGrade();
+		void				decrementGrade();
 
 		class GradeTooHighException : public std::exception {
 			public:
