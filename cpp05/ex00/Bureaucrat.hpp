@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:18 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/25 20:02:18 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:01:00 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # ifndef MESSAGE
 #  define MESSAGE 0
 # endif
+
+# define DEFAULT "\033[0m"
+# define PINK "\033[35m"
+# define BLUE "\033[36m"
+# define YELLOW "\033[33m"
+
 
 class Bureaucrat {
 	private:

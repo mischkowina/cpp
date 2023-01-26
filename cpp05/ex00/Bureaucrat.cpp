@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:21 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/25 20:31:29 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:52:04 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 Bureaucrat::Bureaucrat() : name("Jon Doe"), grade(150)
 {
 	if (MESSAGE)
-		std::cout << "Bureaucrat Default Constructor called." << std::endl;
+		std::cout << PINK "Bureaucrat Default Constructor called." DEFAULT << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name) : name(name), grade(150)
 {
 	if (MESSAGE)
-		std::cout << "Bureaucrat Constructor (string) called." << std::endl;
+		std::cout << PINK "Bureaucrat Constructor (string) called." DEFAULT << std::endl;
 }
 
 Bureaucrat::Bureaucrat(int grade) : name("Jon Doe")
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(int grade) : name("Jon Doe")
 		throw Bureaucrat::GradeTooHighException();
 	this->grade = grade;
 	if (MESSAGE)
-		std::cout << "Bureaucrat Constructor (int) called." << std::endl;
+		std::cout << PINK "Bureaucrat Constructor (int) called." DEFAULT << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
@@ -43,24 +43,20 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 		throw Bureaucrat::GradeTooHighException();
 	this->grade = grade;
 	if (MESSAGE)
-		std::cout << "Bureaucrat Constructor (string, int) called." << std::endl;
+		std::cout << PINK "Bureaucrat Constructor (string, int) called." DEFAULT << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &rhs) : name(rhs.name)
 {
-	if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	this->grade = grade;
+	this->grade = rhs.grade;
 	if (MESSAGE)
-		std::cout << "Bureaucrat Constructor (string, int) called." << std::endl;
+		std::cout << PINK "Bureaucrat Copy Constructor called." DEFAULT << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
 	if (MESSAGE)
-		std::cout << "Bureaucrat Destructor called." << std::endl;
+		std::cout << BLUE "Bureaucrat Destructor called." DEFAULT << std::endl;
 }
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
@@ -68,6 +64,50 @@ Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 	if (this != &rhs)
 		this->grade = rhs.grade;
 	if (MESSAGE)
-		std::cout << "Bureaucrat Copy Assignment operator called." << std::endl;
+		std::cout << PINK "Bureaucrat Copy Assignment operator called." DEFAULT << std::endl;
+	return (*this);
 }
 
+std::string	Bureaucrat::getName() const
+{
+	return (this->name);
+}
+
+int	Bureaucrat::getGrade() const
+{
+	return (this->grade);
+}
+
+void	Bureaucrat::incrementGrade()
+{
+	if ((grade - 1) < 1)
+		throw Bureaucrat::GradeTooHighException();
+	this->grade--;
+	std::cout << this->name << "'s grade succesfully incremented." << std::endl;
+	std::cout << "New grade: " << this->grade << std::endl;
+}
+
+void	Bureaucrat::decrementGrade()
+{
+	if ((grade + 1) > 150)
+		throw Bureaucrat::GradeTooLowException();
+	this->grade++;
+	std::cout << this->name << "'s grade succesfully decremented." << std::endl;
+	std::cout << "New grade: " << this->grade << std::endl;
+}
+
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("GradeTooHighException: Highest possible grade is 1.");
+}
+
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("GradeTooLowException: Lowest possible grade is 150.");
+}
+
+std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
+{
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	return (o);
+}
