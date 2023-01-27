@@ -6,52 +6,58 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:47 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 16:47:48 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:23:28 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : name("Standard Form"), isSigned(false), signGrade(150), execGrade(150)
+AForm::AForm() : name("Standard Form"), isSigned(false), signGrade(150), execGrade(150), target("John Doe")
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Default Constructor called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Default Constructor called." DEFAULT << std::endl;
 }
 
-AForm::AForm(std::string name) : name(name), isSigned(false), signGrade(150), execGrade(150)
+AForm::AForm(std::string name) : name(name), isSigned(false), signGrade(150), execGrade(150), target("John Doe")
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Constructor (string) called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Constructor (string) called." DEFAULT << std::endl;
 }
 
-AForm::AForm(int signGrade, int execGrade) : name("Standard Form"), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade))
+AForm::AForm(int signGrade, int execGrade) : name("Standard Form"), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade)), target("John Doe")
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Constructor (int, int) called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Constructor (int, int) called." DEFAULT << std::endl;
 }
 
-AForm::AForm(std::string name, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade))
+AForm::AForm(std::string name, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade)), target("John Doe")
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Constructor (string, int, int) called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Constructor (string, int, int) called." DEFAULT << std::endl;
 }
 
-AForm::AForm(AForm const &rhs) : name(rhs.name), isSigned(false), signGrade(rhs.signGrade), execGrade(rhs.execGrade)
+AForm::AForm(std::string name, int signGrade, int execGrade, std::string target) : name(name), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade)), target(target)
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Copy Constructor called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Constructor (string, int, int, string) called." DEFAULT << std::endl;
+}
+
+AForm::AForm(AForm const &rhs) : name(rhs.name), isSigned(false), signGrade(rhs.signGrade), execGrade(rhs.execGrade), target(rhs.getTarget())
+{
+	if (MESSAGE)
+		std::cout << PINK "AForm Copy Constructor called." DEFAULT << std::endl;
 }
 
 AForm::~AForm()
 {
 	if (MESSAGE)
-		std::cout << BLUE "Form Destructor called." DEFAULT << std::endl;
+		std::cout << BLUE "AForm Destructor called." DEFAULT << std::endl;
 }
 
 AForm	&AForm::operator=(AForm const &rhs)
 {
 	if (MESSAGE)
-		std::cout << PINK "Form Copy Assigment Operator called." DEFAULT << std::endl;
+		std::cout << PINK "AForm Copy Assigment Operator called." DEFAULT << std::endl;
 	if (this != &rhs)
 		this->isSigned = rhs.isSigned;
 	return (*this);
@@ -84,6 +90,11 @@ int	AForm::getSignGrade() const
 int	AForm::getExecGrade() const
 {
 	return (this->execGrade);
+}
+
+std::string const	AForm::getTarget() const
+{
+	return(this->target);
 }
 
 void	AForm::beSigned(Bureaucrat const &signer)

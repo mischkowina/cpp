@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:36 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 16:43:55 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:41:45 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,27 @@ class AForm {
 		bool				isSigned;
 		int const			signGrade;
 		int const			execGrade;
+		std::string const	target;
+
+		AForm	&operator=(AForm const &rhs);
 
 	public:
 		AForm();
 		AForm(std::string name);
 		AForm(int signGrade, int execGrade);
 		AForm(std::string name, int signGrade, int execGrade);
+		AForm(std::string name, int signGrade, int execGrade, std::string target);
 		AForm(AForm const &rhs);
 		virtual ~AForm();
 
-		AForm	&operator=(AForm const &rhs);
+		
 
 		int					checkGrade(int grade) const;
 		std::string const	getName() const;
 		bool				getIsSigned() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
+		std::string const	getTarget() const;
 
 		void			beSigned(Bureaucrat const &signer);
 		void			execute(Bureaucrat const &executor) const;
