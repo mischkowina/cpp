@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:21 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 17:14:10 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:52:34 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	Bureaucrat::decrementGrade()
 	std::cout << "New grade: " << this->grade << std::endl;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(Form &form) const
 {
 	if (!form.getIsSigned())
 	{

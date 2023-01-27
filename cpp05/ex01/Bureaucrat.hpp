@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:33:18 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 17:38:48 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:52:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Bureaucrat {
 		void				incrementGrade();
 		void				decrementGrade();
 
-		void				signForm(Form &form);
+		void				signForm(Form &form) const;
 
 		class GradeTooHighException : public std::exception {
 			public:
