@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:47 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 19:07:47 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:08:15 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,11 @@ Form::Form(std::string name) : name(name), isSigned(false), signGrade(150), exec
 		std::cout << PINK "Form Constructor (string) called." DEFAULT << std::endl;
 }
 
-Form::Form(int signGrade, int execGrade) try: name("Standard Form"), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade))
+Form::Form(int signGrade, int execGrade) : name("Standard Form"), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade))
 {
 	if (MESSAGE)
 		std::cout << PINK "Form Constructor (int, int) called." DEFAULT << std::endl;
 }
-catch (Form::GradeTooLowException &e)
-{
-	std::cout << "TEST" << std::endl;
-	throw (e);
-}
-
 
 Form::Form(std::string name, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(checkGrade(signGrade)), execGrade(checkGrade(execGrade))
 {
@@ -66,9 +60,9 @@ Form	&Form::operator=(Form const &rhs)
 int	Form::checkGrade(int grade) const
 {
 	if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	else if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	return (grade);
 }
 
