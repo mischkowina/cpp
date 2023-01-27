@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:36 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 16:17:04 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:36:36 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Form {
 		int const			signGrade;
 		int const			execGrade;
 
+		Form	&operator=(Form const &rhs);
+
 	public:
 		Form();
 		Form(std::string name);
@@ -31,8 +33,6 @@ class Form {
 		Form(std::string name, int signGrade, int execGrade);
 		Form(Form const &rhs);
 		~Form();
-
-		Form	&operator=(Form const &rhs);
 
 		int					checkGrade(int grade) const;
 		std::string const	getName() const;

@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:32:15 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 15:04:54 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:38:37 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ int	main()
 			Form f2("Stupid Form");
 			Form f3(10, 60);
 			Form f4("Greatest Form ever", 20, 90);
-			Form f5 = f2;
 	
 			std::cout << "f1: " << f1 << std::endl;
 			std::cout << "f2: " << f2 << std::endl;
 			std::cout << "f3: " << f3 << std::endl;
 			std::cout << "f4: " << f4 << std::endl;
-			std::cout << "f5: " << f5 << std::endl;
 			
 			Bureaucrat b1("Vinny", 15);
 			b1.signForm(f4);
