@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:36 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/26 19:04:04 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:17:04 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Form {
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 
-		void	beSigned(Bureaucrat signer);
+		void	beSigned(Bureaucrat const &signer);
 
 		class GradeTooHighException : public std::exception {
 			public:

@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:47 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 15:08:15 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:17:14 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	Form::getExecGrade() const
 	return (this->execGrade);
 }
 
-void	Form::beSigned(Bureaucrat signer)
+void	Form::beSigned(Bureaucrat const &signer)
 {
 	if (this->isSigned)
 		std::cout << this->name << " is already signed." << std::endl;
