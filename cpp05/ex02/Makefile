@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/01/27 15:11:58 by smischni         ###   ########.fr        #
+#    Updated: 2023/01/29 16:00:14 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 
 SRC		=	main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			AForm.cpp \
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 
 all: $(NAME)
 
@@ -35,6 +38,7 @@ leaks: all
 
 clean:
 	rm -rf *.o
+	rm -rf *_shrubbery
 
 fclean: clean
 	rm -rf $(NAME)

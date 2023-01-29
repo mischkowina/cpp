@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 17:00:00 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 17:56:43 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:43:30 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubb
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	if (MESSAGE)
-		std::cout << PINK "ShrubberyCreationForm Destructor called." DEFAULT << std::endl;
+		std::cout << BLUE "ShrubberyCreationForm Destructor called." DEFAULT << std::endl;
 }
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
 	if (MESSAGE)
 		std::cout << PINK "ShrubberyCreationForm Copy Assigment Operator called." DEFAULT << std::endl;
+	if (this != &rhs)
+		this->setIsSigned(rhs.getIsSigned());
 	return (*this);
 }
 

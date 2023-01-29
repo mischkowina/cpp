@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:01:47 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 17:23:28 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/29 16:46:58 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,12 @@ bool	AForm::getIsSigned() const
 	return (this->isSigned);
 }
 
+void	AForm::setIsSigned(bool status)
+{
+	if (this->isSigned != status)
+		this->isSigned = status;
+}
+
 int	AForm::getSignGrade() const
 {
 	return (this->signGrade);
@@ -134,6 +140,6 @@ const char	*AForm::FormNotSignedException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &o, AForm const &rhs)
 {
-	o << rhs.getName() << ": signGrade " << rhs.getSignGrade() << ", execGrade " << rhs.getExecGrade() << ", is signed: " << rhs.getIsSigned();
+	o << rhs.getName() << ": signGrade " << rhs.getSignGrade() << ", execGrade " << rhs.getExecGrade() << ", is signed: " << rhs.getIsSigned() << ", target: " << rhs.getTarget();
 	return (o);
 }
