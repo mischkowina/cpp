@@ -6,14 +6,12 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:32:15 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/27 17:38:37 by smischni         ###   ########.fr       */
+/*   Updated: 2023/01/29 14:24:28 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-
-#include <cstdio>
 
 int	main()
 {
