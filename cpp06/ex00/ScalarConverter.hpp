@@ -6,18 +6,20 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:47:50 by smischni          #+#    #+#             */
-/*   Updated: 2023/01/31 17:52:58 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:44:49 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <exception>
+# include <string>
+# include <iostream>
+# include <iomanip>
+# include <cstdlib>
+# include <climits>
+# include <cmath>
+# include <exception>
 
 # define DEFAULT "\033[0m"
 # define PINK "\033[35m"

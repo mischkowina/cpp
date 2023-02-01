@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/01/31 16:43:31 by smischni         ###   ########.fr        #
+#    Updated: 2023/02/01 15:53:43 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,15 @@ FLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -Wunused
 SRC		=	main.cpp \
 			ScalarConverter.cpp
 
+OBJ		= $(SRC:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf *.o
-	rm -rf *_shrubbery
 
 fclean: clean
 	rm -rf $(NAME)
