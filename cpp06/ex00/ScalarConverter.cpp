@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:47:40 by smischni          #+#    #+#             */
-/*   Updated: 2023/02/01 15:44:21 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:00:44 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &rhs)
 
 void	ScalarConverter::convert(std::string str)
 {
-	int			mode = 4;
+	int			mode;
 	char		c;
 	int			i;
 	float		f;
@@ -71,7 +71,7 @@ void	ScalarConverter::convert(std::string str)
 				break;
 			idx++;
 		}
-		if (idx < 6)
+		if (idx < 6)//input is one of the edge cases
 		{
 			c_str = "impossible";
 			i_str = "impossible";
@@ -85,16 +85,6 @@ void	ScalarConverter::convert(std::string str)
 				mode = DOUBL_CONV;
 				d = std::strtod(str.c_str(), NULL);
 			}
-		}
-		else if (!str.compare("0.0"))//input is a double 0.0
-		{
-			mode = DOUBL_CONV;
-			d = 0.0;
-		}
-		else if (!str.compare("0.0f"))//input is a float 0.0f
-		{
-			mode = FLOAT_CONV;
-			f = 0.0f;
 		}
 		else
 		{
@@ -118,7 +108,7 @@ void	ScalarConverter::convert(std::string str)
 			if (mode == FLOAT_CONV)//if it was float (ending with f), convert to float 
 			{
 				f = std::strtof(str.c_str(), NULL);
-				if (f == HUGE_VALF || f == -HUGE_VALF)//if conversion impossible, invalid input
+				if (f == HUGE_VALF || f == -HUGE_VALF || errno == ERANGE)//if conversion impossible, invalid input
 					throw ScalarConverter::InvalidInputException();
 			}
 			else if (str.find('.') == std::string::npos && tmp < INT_MAX && tmp > INT_MIN)//if input was int (no decimal point, within int range)
@@ -132,7 +122,7 @@ void	ScalarConverter::convert(std::string str)
 				d = tmp;
 			}
 			if (str.find('.') != std::string::npos)
-		precision = str.length() - (str.find_first_of('.') + 1);
+				precision = str.length() - (str.find_first_of('.') + 1);
 		}
 	}
 	switch(mode)
