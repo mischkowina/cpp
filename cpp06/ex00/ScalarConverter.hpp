@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:47:50 by smischni          #+#    #+#             */
-/*   Updated: 2023/02/01 14:44:49 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:44:20 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # define DEFAULT "\033[0m"
 # define PINK "\033[35m"
 # define BLUE "\033[36m"
-# define YELLOW "\033[33m"
 
 # define CHAR_CONV 0
 # define INT_CONV 1
