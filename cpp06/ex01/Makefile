@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/02/02 16:19:51 by smischni         ###   ########.fr        #
+#    Updated: 2023/02/02 16:56:17 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re leaks run
+.PHONY: all clean fclean re leaks run message
