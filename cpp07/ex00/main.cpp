@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:09:21 by smischni          #+#    #+#             */
-/*   Updated: 2023/02/09 15:02:23 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:20:57 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main()
 	float x = 0.2121;
 	::swap(y,x);
 	std::cout << "y = " << y << ", x = " << x << std::endl;
-	std::cout << "min(y,x) = " << ::min(y,x) << std::endl;
-	std::cout << "max(y,x) = " << ::max(y,x) << std::endl;
+	std::cout << "min(y,x) = " << ::min<float>(y,x) << std::endl;
+	std::cout << "max(y,x) = " << ::max<float>(y,x) << std::endl;
 	return (0);
 }
