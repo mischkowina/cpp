@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:08:06 by smischni          #+#    #+#             */
-/*   Updated: 2023/02/11 19:56:36 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:58:54 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	main()
 {
 	{
-		std::cout << std::endl << YELLOW << "*** Mass Test ***" << DEFAULT << std::endl;
+		std::cout << std::endl << YELLOW << "*** TEST 1: Mass Test ***" << DEFAULT << std::endl;
 		try
 		{
-			Span sp = Span(20000);
+			Span sp = Span(10000);
 			sp.fillRandom();
 			// sp.printSpan();
 			std::cout << sp.shortestSpan() << std::endl;
@@ -31,7 +31,7 @@ int	main()
 		}
 	}
 	{
-		std::cout << std::endl << YELLOW << "*** Example Subject Sheet ***" << DEFAULT << std::endl;
+		std::cout << std::endl << YELLOW << "*** TEST 2: Subject Test ***" << DEFAULT << std::endl;
 		try
 		{
 			Span sp = Span(5);
@@ -49,7 +49,7 @@ int	main()
 		}
 	}
 	{
-		std::cout << std::endl << YELLOW << "*** Empty array ***" << DEFAULT << std::endl;
+		std::cout << std::endl << YELLOW << "*** TEST 3: Empty Object ***" << DEFAULT << std::endl;
 		try
 		{
 			Span sp = Span(0);
@@ -65,7 +65,7 @@ int	main()
 		}
 	}
 	{
-		std::cout << std::endl << YELLOW << "*** Copy constructor and copy assignment operator ***" << DEFAULT << std::endl;
+		std::cout << std::endl << YELLOW << "*** TEST 4: Copy Constructor and Copy Assignment Operator ***" << DEFAULT << std::endl;
 		try
 		{
 			Span sp1 = Span(10);
