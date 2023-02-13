@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 16:32:54 by smischni          #+#    #+#             */
-/*   Updated: 2023/02/02 16:56:05 by smischni         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:26:58 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,29 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	A	*a = dynamic_cast<A *>(&p);
-	B	*b = dynamic_cast<B *>(&p);
-	C	*c = dynamic_cast<C *>(&p);
-
-	if (a)
+	try
+	{
+		A	&a = dynamic_cast<A &>(p);
 		std::cout << "Base *p object is of type A." << std::endl;
-	else if (b)
+		(void)a;
+		return ;
+	}
+	catch(const std::exception& e) {}
+	try
+	{
+		B	&b = dynamic_cast<B &>(p);
 		std::cout << "Base *p object is of type B." << std::endl;
-	else if (c)
+		(void)b;
+		return ;
+	}
+	catch(const std::exception& e) {}
+	try
+	{
+		C	&c = dynamic_cast<C &>(p);
 		std::cout << "Base *p object is of type C." << std::endl;
+		(void)c;
+	}
+	catch(const std::exception& e) {}
 }
 
 int	main(void)
