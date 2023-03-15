@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:11 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/14 16:14:29 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:33:30 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 class BitcoinExchange {
 	private:
 		std::map<std::string, double>	_priceHistory;
-		bool							_isReady;
+		bool							_isValid;
 
 	public:
 		BitcoinExchange();
@@ -41,10 +41,12 @@ class BitcoinExchange {
 		~BitcoinExchange();
 		BitcoinExchange	operator=(BitcoinExchange const &rhs);
 
-		bool	isReady() const;
-		float	getPrice(std::string date) const;
+		bool		isValid() const;
+		float		getPrice(std::string date) const;
+		std::string	getFirstEntryDate() const;
 };
 
 bool	isValidDate(std::string date);
+bool	isValidNumber(std::string nbr);
 
 #endif

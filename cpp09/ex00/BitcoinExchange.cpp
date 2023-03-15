@@ -6,13 +6,13 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:10 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/14 16:43:20 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:49:28 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() : _isReady(false)
+BitcoinExchange::BitcoinExchange() : _isValid(false)
 {
 	if (MESSAGE)
 		std::cout << PINK "BitcoinExchange Default Constructor called." DEFAULT << std::endl;
@@ -36,16 +36,26 @@ BitcoinExchange::BitcoinExchange() : _isReady(false)
 		pos = line.find(',', 0);
 		if (pos == std::string::npos)
 		{
-			std::cerr << RED "ERROR: " DEFAULT << "Invalid data format in data.csv. Please provide correct data.csv file." << std::endl;
+			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (format) in data.csv. Please provide correct data.csv file." << std::endl;
 			return ;
 		}	
 		date = line.substr(0, pos);
 		line.erase(0, pos + 1);
+		if (!isValidDate(date) || !isValidNumber(line))
+		{
+			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
+			return ;
+		}
 		price = atof(line.c_str());
+		if (price < 0)
+		{
+			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
+			return ;
+		}
 		_priceHistory.insert(std::make_pair(date, price));
 	}
 	database.close();
-	_isReady = true;
+	_isValid = true;
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs)
@@ -56,7 +66,7 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs)
 	if (this != &rhs)
 	{
 		this->_priceHistory = rhs._priceHistory;
-		this->_isReady = rhs._isReady;
+		this->_isValid = rhs._isValid;
 	}
 }
 
@@ -74,35 +84,42 @@ BitcoinExchange	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	if (this != &rhs)
 	{
 		this->_priceHistory = rhs._priceHistory;
-		this->_isReady = rhs._isReady;
+		this->_isValid = rhs._isValid;
 	}
 	return (*this);
 }
 
-bool	BitcoinExchange::isReady() const
+bool	BitcoinExchange::isValid() const
 {
-	return this->_isReady;
+	return this->_isValid;
 }
 
 float	BitcoinExchange::getPrice(std::string date) const
 {
-	std::map<std::string, double>::const_iterator it = _priceHistory.find(date);
-	if (it == _priceHistory.end())
-		return -1;
+	std::map<std::string, double>::const_iterator it = _priceHistory.lower_bound(date);
+	if (it == _priceHistory.begin())
+		throw std::exception();
+	else if (it == _priceHistory.end() || date != it->first)
+		return (--it)->second;
 	return it->second;
+}
+
+std::string	BitcoinExchange::getFirstEntryDate() const
+{
+	return _priceHistory.begin()->first;
 }
 
 bool	isValidDate(std::string date)
 {
 	for (int i = 0; i < date.length(); i++)
 	{
-		if (date[i] != '-' && isdigit(date[i] == 0))
+		if (date[i] != '-' && isdigit(date[i]) == 0)
 			return false;
 	}
 	
 	//check the year
 	size_t pos = date.find('-', 0);
-	if (pos == std::string::npos || pos > 4 || pos == 0)
+	if (pos == std::string::npos || pos == 0)
 		return false;
 	int year = atoi(date.substr(0, pos).c_str());
 	date.erase(0, pos + 1);
@@ -120,7 +137,7 @@ bool	isValidDate(std::string date)
 	if (date.empty() || date.length() > 2)
 		return false;
 	int day = atoi(date.c_str());
-	if (day > 32 || day < 1)
+	if (day > 31 || day < 1)
 		return false;
 	if (day == 31 && month < 8 && month % 2 != 1)
 		return false;
@@ -131,5 +148,23 @@ bool	isValidDate(std::string date)
 		if (day > 29 || year % 4 != 0)
 			return false;
 	}
+	return true;
+}
+
+bool	isValidNumber(std::string nbr)
+{
+	int	nbr_dots = 0;
+	
+	for (int i = 0; i < nbr.length(); i++)
+	{
+		if (i == 0 && nbr[i] == '-')
+			continue;
+		if (nbr[i] != '.' && isdigit(nbr[i]) == 0)
+			return false;
+		if (nbr[i] == '.')
+			nbr_dots++;
+	}
+	if (nbr_dots > 1)
+		return false;
 	return true;
 }
