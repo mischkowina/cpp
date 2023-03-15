@@ -6,7 +6,7 @@
 #    By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:56 by smischni          #+#    #+#              #
-#    Updated: 2023/03/15 11:51:30 by smischni         ###   ########.fr        #
+#    Updated: 2023/03/15 12:01:01 by smischni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-message: $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -D MESSAGE=1 -o $(NAME)
-
 clean:
 	rm -rf $(OBJ)
 
@@ -35,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re message
+.PHONY: all clean fclean re

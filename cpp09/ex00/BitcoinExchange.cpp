@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:10 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 11:49:28 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:01:34 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 BitcoinExchange::BitcoinExchange() : _isValid(false)
 {
-	if (MESSAGE)
-		std::cout << PINK "BitcoinExchange Default Constructor called." DEFAULT << std::endl;
-	
 	std::ifstream	database;
 	database.open("data.csv", std::ifstream::in);
 	if (!database.is_open())
@@ -60,9 +57,6 @@ BitcoinExchange::BitcoinExchange() : _isValid(false)
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs)
 {
-	if (MESSAGE)
-		std::cout << PINK "BitcoinExchange Copy Constructor called." DEFAULT << std::endl;
-
 	if (this != &rhs)
 	{
 		this->_priceHistory = rhs._priceHistory;
@@ -70,17 +64,10 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &rhs)
 	}
 }
 
-BitcoinExchange::~BitcoinExchange()
-{
-	if (MESSAGE)
-		std::cout << BLUE "BitcoinExchange Destructor called." DEFAULT << std::endl;
-}
+BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {
-	if (MESSAGE)
-		std::cout << PINK "BitcoinExchange Copy Assignment Operator called." DEFAULT << std::endl;
-
 	if (this != &rhs)
 	{
 		this->_priceHistory = rhs._priceHistory;

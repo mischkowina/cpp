@@ -6,16 +6,12 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:11 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 11:33:30 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:01:04 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
-
-# ifndef MESSAGE
-#  define MESSAGE 0
-# endif
 
 # define DEFAULT "\033[0m"
 # define PINK "\033[35m"
