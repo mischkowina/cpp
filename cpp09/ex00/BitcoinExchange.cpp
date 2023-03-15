@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:10 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 12:06:30 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:26:24 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ BitcoinExchange::BitcoinExchange() : _isValid(false)
 	database.open("data.csv", std::ifstream::in);
 	if (!database.is_open())
 	{
-		std::cerr << RED "ERROR: " DEFAULT << "Failed to open database. Please provide data.csv file." << std::endl;
+		std::cout << RED "ERROR: " DEFAULT << "Failed to open database. Please provide data.csv file." << std::endl;
 		return ;
 	}
 	
@@ -33,20 +33,20 @@ BitcoinExchange::BitcoinExchange() : _isValid(false)
 		pos = line.find(',', 0);
 		if (pos == std::string::npos)
 		{
-			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (format) in data.csv. Please provide correct data.csv file." << std::endl;
+			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (format) in data.csv. Please provide correct data.csv file." << std::endl;
 			return ;
 		}	
 		date = line.substr(0, pos);
 		line.erase(0, pos + 1);
 		if (!isValidDate(date) || !isValidNumber(line))
 		{
-			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
+			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
 			return ;
 		}
 		price = atof(line.c_str());
 		if (price < 0)
 		{
-			std::cerr << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
+			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
 			return ;
 		}
 		_priceHistory.insert(std::make_pair(date, price));
