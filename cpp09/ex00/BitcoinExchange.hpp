@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:11 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 12:01:04 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:34:26 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define BITCOINEXCHANGE_HPP
 
 # define DEFAULT "\033[0m"
-# define PINK "\033[35m"
-# define BLUE "\033[36m"
 # define RED "\033[31m"
 
 # include <iostream>
