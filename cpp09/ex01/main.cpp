@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:32:30 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 12:56:56 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:53:59 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ int	main(int argc, char **argv)
 	}
 
 	std::string	input(argv[1]);
-	RPN			calculation(input);
-	
-	std::cout << calculation.getResult() << std::endl;
+	try
+	{
+		RPN			calculation(input);
+		std::cout << calculation.getResult() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << RED "ERROR: " DEFAULT << e.what() << std::endl;
+		return 1;
+	}
 	
 	return 0;
 }
