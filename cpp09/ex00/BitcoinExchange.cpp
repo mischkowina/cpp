@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:10 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 15:26:24 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:11:12 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ BitcoinExchange::BitcoinExchange() : _isValid(false)
 	std::ifstream	database;
 	database.open("data.csv", std::ifstream::in);
 	if (!database.is_open())
-	{
-		std::cout << RED "ERROR: " DEFAULT << "Failed to open database. Please provide data.csv file." << std::endl;
-		return ;
-	}
+		throw std::logic_error("Failed to open database. Please provide data.csv file.");
 	
 	std::string	line;
 	std::string	date;
@@ -32,23 +29,14 @@ BitcoinExchange::BitcoinExchange() : _isValid(false)
 	{
 		pos = line.find(',', 0);
 		if (pos == std::string::npos)
-		{
-			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (format) in data.csv. Please provide correct data.csv file." << std::endl;
-			return ;
-		}	
+			throw std::logic_error("Invalid data entry (format) in data.csv. Please provide correct data.csv file.");
 		date = line.substr(0, pos);
 		line.erase(0, pos + 1);
 		if (!isValidDate(date) || !isValidNumber(line))
-		{
-			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
-			return ;
-		}
+			throw std::logic_error("Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file.");
 		price = atof(line.c_str());
 		if (price < 0)
-		{
-			std::cout << RED "ERROR: " DEFAULT << "Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file." << std::endl;
-			return ;
-		}
+			throw std::logic_error("Invalid data entry (date / number format) in data.csv. Please provide correct data.csv file.");
 		_priceHistory.insert(std::make_pair(date, price));
 	}
 	database.close();
@@ -85,7 +73,7 @@ float	BitcoinExchange::getPrice(std::string date) const
 {
 	std::map<std::string, double>::const_iterator it = _priceHistory.lower_bound(date);
 	if (it == _priceHistory.begin())
-		throw std::exception();
+		throw std::logic_error("Date is too early. Data base starts at " + this->getFirstEntryDate());
 	else if (it == _priceHistory.end() || date != it->first)
 		return (--it)->second;
 	return it->second;

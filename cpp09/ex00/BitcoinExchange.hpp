@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:56:11 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/15 12:34:26 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:02:18 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <string>
 # include <map>
 # include <exception>
+# include <stdexcept>
 # include <cstdlib>
 # include <utility>
 
