@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:39:36 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/16 18:19:14 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:21:22 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PmergeMe::PmergeMe(int argc, char **argv)
 	struct timeval	startTime = getTime();
 	this->sortDeque(argc, argv);
 	struct timeval	dequeTime = getTime();
-	//get the difference
+	_dequeTime = (dequeTime.tv_sec - startTime.tv_sec) * 1000000 + (dequeTime.tv_usec - startTime.tv_usec);
 	
 	//sort list
 	
