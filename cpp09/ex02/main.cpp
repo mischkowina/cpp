@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:53:41 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/16 12:53:49 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:30:01 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,12 @@ int	main(int argc, char **argv)
 		}
 	}
 	
-	PmergeMe	sort(argc, argv);
+	try
+	{
+		PmergeMe	sort(argc, argv);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED "Error: " DEFAULT << e.what() << std::endl;
+	}
 }

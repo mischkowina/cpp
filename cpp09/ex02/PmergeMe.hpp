@@ -6,7 +6,7 @@
 /*   By: smischni <smischni@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:37:53 by smischni          #+#    #+#             */
-/*   Updated: 2023/03/16 18:16:29 by smischni         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:33:00 by smischni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class PmergeMe {
 	private:
 		std::deque<int>	_deque;
 		std::list<int>	_list;
-		long long		_dequeTime;
-		long long		_listTime;
+		double			_dequeTime;
+		double			_listTime;
 
 	public:
 		PmergeMe();
